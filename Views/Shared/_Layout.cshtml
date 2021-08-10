@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AddressBook</title>
+    <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -22,6 +23,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Index">List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Create">Create</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
@@ -30,16 +37,28 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 mb-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - AddressBook - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer mt-auto text-muted">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-last order-lg-first d-flex align-items-center justify-content-start">
+                    &copy; 2021 - Brenden Bass - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="ml-2">Privacy</a>
+                </div>
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-lg-end align-items-center">
+                    <div class="row mt-2">
+                        <div class="col social"><a href="https://www.linkedin.com/in/brendenbass/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></i></a></div>
+                        <div class="col social"><a href="https://github.com/brendenbass" target="_blank"><i class="fab fa-github fa-2x"></i></i></a></div>
+                        <div class="col social"><a href="https://twitter.com/BrendenCB" target="_blank"><i class="fab fa-twitter fa-2x"></i></i></a></div>
+                        <div class="col social"><a href="https://www.youtube.com/c/BrendenBass" target="_blank"><i class="fab fa-youtube fa-2x"></i></i></a></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+</footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

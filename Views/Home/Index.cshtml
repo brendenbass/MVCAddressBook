@@ -2,7 +2,32 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="mt-5">
+    <div class="row g-5">
+        <div class="col-12 col-lg-7 order-last order-lg-first">
+            <h1 class="display-4 text-left d-none d-md-block">Address Book:<br />A Coding Project</h1>
+            <p class="text-left mt-4">If you have trouble keeping track of all of your contact information, this is for you!</p>
+            <ul class="fa-ul pt-2 checklist">
+                <li><span class="fa-li"><i class="fas fa-check-square"></i></span>C# Fundamentals</li>
+                <li><span class="fa-li"><i class="fas fa-check-square"></i></span>MVC Fundamentals</li>
+                <li><span class="fa-li"><i class="fas fa-check-square"></i></span>CSS and Bootstrap Layout</li>
+                <li><span class="fa-li"><i class="fas fa-check-square"></i></span>PostgreSQL Databases</li>
+                <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Heroku Continuous Integration / Continuous Deployment</li>
+            </ul>
+            <div class="ml-2 mt-4 mb-4 pb-2 pt-2">
+                <a class="btn btn-dark" asp-area="" asp-controller="Contacts" asp-action="Create">Create A Contact</a>
+            </div>
+            <div class="d-flex">
+                <div class="row">
+                    <div class="col"><i class="fab fa-js-square fa-4x jsicon"></i></div>
+                    <div class="col"><i class="fab fa-bootstrap fa-4x bsicon"></i></div>
+                    <div class="col"><i class="fab fa-html5 fa-4x html5icon"></i></div>
+                    <div class="col"><i class="fab fa-css3-alt fa-4x cssicon"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex align-items-center">
+            <img src="/IMG/AddressBook.svg" class="img-fluid center-block d-block mx-auto crop" alt="App Logo" width="700" height="500" style="margin-bottom: -60px; margin-top: -70px;">
+        </div>
+    </div>
 </div>
