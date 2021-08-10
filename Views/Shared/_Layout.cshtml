@@ -10,8 +10,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
+                <img src="/IMG/initial logo white no bg.svg" class="d-inline-block align-text-top mr-2" width="30" height="28">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AddressBook</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +21,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Index">List</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Contacts" asp-action="Index">List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Create">Create</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Contacts" asp-action="Create">Create</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-white" href="https://github.com/brendenbass/MVCAddressBook" target="_blank">Git Repo</a>
                         </li>
                     </ul>
                 </div>
@@ -37,7 +38,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3 mb-5">
+        <main role="main" class="pb-5 mb-5">
             @RenderBody()
         </main>
     </div>
@@ -45,10 +46,10 @@
     <footer class="border-top footer mt-auto text-muted">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-6 order-last order-lg-first d-flex align-items-center justify-content-start">
+                <div class="col order-last order-lg-first d-flex align-items-center justify-content-start">
                     &copy; 2021 - Brenden Bass - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="ml-2">Privacy</a>
                 </div>
-                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-lg-end align-items-center">
+                <div class="col d-flex justify-content-start justify-content-lg-end align-items-center">
                     <div class="row mt-2">
                         <div class="col social"><a href="https://www.linkedin.com/in/brendenbass/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></i></a></div>
                         <div class="col social"><a href="https://github.com/brendenbass" target="_blank"><i class="fab fa-github fa-2x"></i></i></a></div>
