@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<AddressBook.Models.Contact>
+@inject AddressBook.Services.Interfaces.IImageService _imageService
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
 
 @{
     ViewData["Title"] = "Index";
@@ -9,9 +12,12 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="ContactTable">
     <thead>
         <tr>
+            <th>
+                Image
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -39,21 +45,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageData)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageType)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                <img class="img-fluid" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
@@ -82,15 +82,6 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageData)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageType)
-            </td>
-            <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -99,3 +90,12 @@
 }
     </tbody>
 </table>
+
+@section scripts {
+<script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#ContactTable').DataTable();
+    });
+</script>
+}
